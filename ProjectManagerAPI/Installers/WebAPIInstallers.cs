@@ -4,6 +4,7 @@ using Castle.Windsor;
 using ProjectManagerAPI.Features.Project;
 using ProjectManagerAPI.Features.Task;
 using ProjectManagerAPI.Features.User;
+using ProjectManagerAPI.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,8 @@ namespace ProjectManagerAPI.Installers
         {
             container.Register(Classes.FromThisAssembly().BasedOn<ApiController>()
                 .LifestyleTransient());
+            container.Register(Component.For<IProjectManagerDBContext>()
+                .ImplementedBy<ProjectManagerDBContext>().LifestyleTransient());
             container.Register(Component.For<ITaskService>()
                 .ImplementedBy<TaskService>().LifestyleTransient());
             container.Register(Component.For<IUserService>()
