@@ -8,7 +8,7 @@ namespace ProjectManagerAPI.Infrastructure
     {
         public ProjectManagerDBContext() : base("name=ProjectManagementDBConnectionString")
         {
-            Database.SetInitializer<ProjectManagerDBContext>(new DropCreateDatabaseIfModelChanges<ProjectManagerDBContext>());
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ProjectManagerDBContext>());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -19,7 +19,6 @@ namespace ProjectManagerAPI.Infrastructure
                    .HasRequired(x => x.Project)
                    .WithMany(x => x.Tasks)
                    .WillCascadeOnDelete(false);
-
         }
 
         public DbSet<UserEntity> Users { get; set; }

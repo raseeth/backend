@@ -10,7 +10,7 @@ namespace ProjectManagerAPI.Infrastructure.Entities
 
         public string Name { get; set; }
 
-        public int Piority { get; set; }
+        public int Priority { get; set; }
 
         public DateTime? StartDate { get; set; }
 

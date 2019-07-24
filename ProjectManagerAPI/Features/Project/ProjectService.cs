@@ -23,7 +23,7 @@ namespace ProjectManagerAPI.Features.Project
                 EndDate = project.endDate,
                 StartDate = project.startDate,
                 Name = project.name,
-                Piority = project.priority,
+                Priority = project.priority,
                 UserId = project.userId
             };
             this.dbContext.Projects.Add(entity);
@@ -55,7 +55,7 @@ namespace ProjectManagerAPI.Features.Project
             if (projectEntity != null)
             {
                 projectEntity.Name = project.name;
-                projectEntity.Piority = project.priority;
+                projectEntity.Priority = project.priority;
                 projectEntity.StartDate = project.startDate;
                 projectEntity.EndDate = project.endDate;
                 projectEntity.UserId = project.userId;
@@ -71,7 +71,7 @@ namespace ProjectManagerAPI.Features.Project
             {
                 response.name = project.Name;
                 response.id = project.Id;
-                response.priority = project.Piority;
+                response.priority = project.Priority;
                 response.startDate = project.StartDate;
                 response.endDate = project.EndDate;
                 response.userId = project.UserId;
