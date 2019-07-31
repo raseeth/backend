@@ -11,7 +11,7 @@ namespace ProjectManagerAPI
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-            EnableCorsAttribute cors = new EnableCorsAttribute("http://localhost:4200", "*", "GET,POST,DELETE,PUT");
+            EnableCorsAttribute cors = new EnableCorsAttribute("http://localhost:9595", "*", "GET,POST,DELETE,PUT");
 
             config.EnableCors(cors);
 
